@@ -1,0 +1,667 @@
+﻿<!doctype html>
+<html lang="en">
+    
+    <head>
+        <title>
+            玩转世界杯地球
+        </title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            html { height: 100%; } body { margin: 0; padding: 0; /* background:src=(./sky.jpg)
+            center center norepeat;/*url(./loading.gif) */ -moz-background-size:100%
+            100%; /* old vision of Firefox */ background-size:100% 100%; color: #ffffff;
+            font-family: sans-serif; font-size: 13px; line-height: 20px; height: 100%;
+            } #info { font-size: 11px; position: absolute; bottom: 5px; background-color:
+            rgba(0, 0, 0, 0.8); border-radius: 3px; right: 10px; padding: 10px; } a
+            { color: #aaa; text-decoration: none; } a:hover { text-decoration: underline;
+            } .bull { padding: 0px 5px; color: #555; } #title { position: absolute;
+            top: 20px; width: 320px; left: 20px; background-color: rgba(0, 0, 0, 0.2);
+            font: 20px/20px Georgia; padding: 15px; } .year { font: 16px Georgia; line-height:
+            26px; height: 30px; text-align: center; float: left; width: 90px; color:
+            rgba(255, 255, 255, 0.4); cursor: pointer; -webkit-transition: all 0.1s
+            ease-out; } .year:hover, .year.active { font-size: 23px; color: #fff; }
+            #ce span { display: none; } #ce { width: 380px; height: 300px; display:
+            block; position: absolute; top: 150px; left: 20px; background: url(./tittle.png);
+            }
+        </style>
+        <style type="text/css">
+            div,ul,li{margin:0;padding:0;style-color:#ffffff;;} body{font-size:0.8em;letter-spacing:1px;font-family:"微软雅黑";line-height:1.2;
+            style-color:#ffffff;} a{color:#ffffff;text-decoration:none;} a:hover{color:#ffffff;text-decoration:none;}
+            ul,li{list-style:none;style-color:#ffffff;} #i_focus{height:380px;left:420px;top:180px;background:#eee;padding:5px
+            5px 0 5px;margin:0 auto;opacity:0.8;filter:alpha(opacity=80);z-index:999;}
+            #i_focus_pic{width:570px;height:380px;display:inline;position:relative;float:left;overflow:hidden;}
+            #i_focus_piclist{position:absolute;} #i_focus_piclist li{width:570px;height:380px;overflow:hidden;display:none;}
+            #i_focus_piclist img{width:570px;height:380px;border:1px solid #fff;} #i_focus_btn
+            {float:right;width:77px;} #i_focus_btn li {cursor:pointer;opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=50);}
+            #i_focus_btn img{width:75px;height:70px;border:1px solid #fff;margin-bottom:2px;}
+            #i_focus_btn .i_cur {opacity:1;-moz-opacity:1;filter:alpha(opacity=100);}
+            #i_focus_opdiv{position:absolute;left:0;bottom:0;width:374px;height:40px;background:#000;opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=50);border:1px
+            solid #fff;border-top:0;} #i_focus_tx span{font-family:"微软雅黑";font-size:16px;font-weight:bold;line-height:22px;display:block;style-color:#ffffff;}
+            #i_focus_tx{position:absolute;left:8px;bottom:2px;color:#FFF;} #i_focus_tx
+            .normal {display:none;} #closebutton{z-index:9999;}
+        </style>
+        <style type="text/css">
+            #chooseyear3 li{ font-size:30px; color: #cccccc; ;padding-right:0%;
+            } #chooseyear3{width:90%;  height:5%;opacity:0.5;  /* filter: alpha(opacity=10); opacity:0.1;*/
+            }
+        </style>
+    </head>
+    
+    <body id='body' background="./sky.jpg">
+        <div id="container">
+        </div>
+        <a id="ce">
+            <span>
+                This is a Chrome Experiment
+            </span>
+        </a>
+        </div>
+        <!-- <img id="panel" src="red_point.png" style="position:absolute; top:0px;
+        left:0px; display:none;">-->
+        <!--[if lte IE 11]>
+            <div id=iebg style="height:400px;width:800px;top:15px;left:50px" style="background-image:url('./world3.jpg');">
+            </div>
+        <![endif]-->
+        <div id="info" style="display:none" style="height:200px;width:200px;top:15px;right:15px"
+        style="background-image:url('');">
+        </div>
+        <ul id='chooseyear3' style="display:none;">
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            >
+                <img  id='chooseli00_3' src="./lipic/li00.png" width="60px" height="60px" alt="" onClick="onclick2(this,884,564)" onMouseOut="onmouseout3(this)"
+                />
+            </li>
+            <!--@@@@@-->
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onMouseOut="onmouseout3(this)">
+                <img  id='chooseli01_3' src="./lipic/li01.png" width="60px" height="60px" alt=""  onClick="onclick2(this,357,1006)" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <!--@@@@@-->
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,313,975)">
+                <img  id='chooseli02_3' src="./lipic/li02.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)" >
+                </img>
+            </li>
+            <!--@@@@@-->
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,766,634)">
+                <imgid="chooseli03_3"  src="./lipic/li03.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,337,957)">
+                <img id="chooseli04_3" src="./lipic/li04.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,259,1002)">
+                <img id="chooseli05_3" src="./lipic/li05.png" width="60px" height="60px" alt=""   onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,849,512)">
+                <img id='chooseli06_3' src="./lipic/li06.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <!--@@@@@-->
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,312,911)">
+                <img id="chooseli07_3" src="./lipic/li07.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,534,389)">
+                <img id="chooseli08_3" src="./lipic/li08.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,321,978)">
+                <img id="chooseli09_3" src="./lipic/li09.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,856,548)">
+                <img id="chooseli10_3" src="./lipic/li10.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,382,904)">
+                <img id="chooseli11_3" src="./lipic/li11.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+             onClick="onclick2(this,534,389)">
+                <img id='chooseli12_3' src="./lipic/li12.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <!--@@@@@-->
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,357,1006)">
+                <img id="chooseli13_3" src="./lipic/li13.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,403,529)">
+                <img id="chooseli14_3" src="./lipic/li14.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,313,975)">
+                <img id="chooseli15_3" src="./lipic/li15.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,413,1656)">
+                <img id="chooseli16_3" src="./lipic/li16.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+          onClick="onclick2(this,321,978)">
+                <img id='chooseli17_3' src="./lipic/li17.png" width="60px" height="60px" alt=""   onMouseOut="onmouseout3(this)" >
+                </img>
+            </li>
+            <!--@@@@@-->
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,690,1085)">
+                <img id="chooseli18_3" src="./lipic/li18.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+           onClick="onclick2(this,766,654)">
+                <img id="chooseli19_3" src="./lipic/li19.png" width="60px" height="60px" alt=""  onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,285,1096)">
+                <img id="chooseli20_3" src="./lipic/li20.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+            <li style="float:left;" onMouseOver="onmouseover2(this)"
+            onClick="onclick2(this,472,1236)">
+                <img id="chooseli21_3" src="./lipic/li21.png" width="60px" height="60px" alt="" onMouseOut="onmouseout3(this)">
+                </img>
+            </li>
+        </ul>
+      
+        <div id="i_focus" style="display:none;left:1000px;top:180px;">
+            <div id="i_focus_pic">
+                <ul id="i_focus_piclist" style="left:0;top:0;">
+                    <li id='i_focuspic_li0'>
+                        <a href="#" target="_blank">
+                            <img id='pic0' src="" alt="">
+                        </a>
+                    </li>
+                    <li id='i_focuspic_li1'>
+                        <a href="#" target="_blank">
+                            <img id='pic1' src="" alt="">
+                        </a>
+                    </li>
+                    <li id='i_focuspic_li2'>
+                        <a href="#" target="_blank">
+                            <img id='pic2' src="" alt="">
+                        </a>
+                    </li>
+                    <li id='i_focuspic_li3'>
+                        <a href="#" target="_blank">
+                            <img id='pic3' src="" alt="">
+                        </a>
+                    </li>
+                    <li id='i_focuspic_li4'>
+                        <a href="#" target="_blank">
+                            <img id='pic4' src="" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <div id="i_focus_opdiv">
+                </div>
+                <!--slide大图-->
+                <ul id="i_focus_tx">
+                    <li class="normal" id='li0'>
+                        <span id='text0'>
+                        </span>
+                    </li>
+                    <li class="normal" id='li1'>
+                        <span id='text1'>
+                        </span>
+                    </li>
+                    <li class="normal" id='li2'>
+                        <span id='text2'>
+                        </span>
+                    </li>
+                    <li class="normal" id='li3'>
+                        <span id='text3'>
+                        </span>
+                    </li>
+                    <li class="normal" id='li4'>
+                        <span id='text4'>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <!--slide右侧小缩略图-->
+            <ul id="i_focus_btn">
+                <li class="i_cur" id="p0">
+                    <img id="spic0" src="" alt="">
+                </li>
+                <li id="p1">
+                    <img id="spic1" src="" alt="">
+                </li>
+                <li id="p2">
+                    <img id="spic2" src="" alt="">
+                </li>
+                <li id="p3">
+                    <img id="spic3" src="" alt="">
+                </li>
+                <li id="p4">
+                    <img id="spic4" src="" alt="">
+                </li>
+            </ul>
+        </div>
+        <div id="closebutton" style="display:none;z-index:99999;" style="height:60px;width:60px;"
+        style="background-image:url('');" onClick="clickbutton()">
+        </div>
+        <script type="text/javascript">
+            var ie10bg = document.createElement("div");
+            var ul3 = document.getElementById('chooseyear3');
+  if(navigator.appName == "Microsoft Internet Explorer") 
+		{ 
+			if(navigator.userAgent.indexOf("MSIE 6.0")>0 || navigator.userAgent.indexOf("MSIE 7.0")>0|| navigator.userAgent.indexOf("MSIE 8.0")>0|| navigator.userAgent.indexOf("MSIE 9.0")>0|| navigator.userAgent.indexOf("MSIE 10.0")>0|| navigator.userAgent.indexOf("MSIE 11.0")>0) 
+	//	window.confirm("对不起，您的IE浏览器版本不支持，请使用IE11及以上、chrome或者firefox浏览器");
+			{
+	
+
+            ie10bg.style.background = "url(./world4.jpg)";
+            ie10bg.style.backgroundSize = "100%";
+            ie10bg.id = 'ie10bg';
+            ie10bg.style.position = 'absolute';
+            ie10bg.style.height = "100%";
+            ie10bg.style.width = "100%";
+            ie10bg.style.left = 0 + "px";
+            ie10bg.style.top = 0 + "px";
+            document.body.appendChild(ie10bg);
+
+			var hotpic2=document.getElementById('i_focus');
+				hotpic2.style.height=20+'px';
+				hotpic2.style.width=20+'px';
+				
+            ie10bg.onclick = function() {
+                document.getElementById('i_focus').style.display = 'none';
+            };
+
+            ul3.style.display = '';
+            ul3.style.position = 'absolute';
+            ul3.style.left =  ie10bg.offsetWidth*0.1 + "px";
+            ul3.style.top = 35 + "px";
+            //		ul3.style.opacity='0.1';
+            document.body.appendChild(ul3);
+
+            
+	}
+}
+            onmouseover2 = function(e) {
+
+                if (window.event) e = window.event;
+                ul3.style.opacity = '1';
+                document.getElementById(e.srcElement.id).src='./lipic/li'+e.srcElement.id.substring(8,10)+'_1.png';
+               
+            }
+
+          
+		var isclick=false;
+            function onmouseout3(e) {
+
+                if (window.event) e = window.event;
+                ul3.style.opacity = '0.5';
+				if(!isclick)
+                document.getElementById(e.srcElement.id).src='./lipic/li'+e.srcElement.id.substring(8,10)+'.png';
+				
+				isclick=false;
+            }
+		
+		
+		var preshowingflag;
+		
+			//当点击某个国家图片或者年份或者相对应的小灰点时，传入相对应的t和l表示该国在该地图上对应的位置
+            function onclick2(e, t, l) {
+                if (window.event) e = window.event;
+				
+				/*前一版本：当第二次点击时间轴上某个元素的时候，先移除原来的红点
+              //  if (document.getElementById('panel')) {
+            //       var panel = document.getElementById('panel');
+             			
+            //        panel.style.display = '';
+               }*/
+			   
+			   
+			   //以下是用于点击后图标常亮，并让前一个被点击的图标变暗
+		   		isclick=true;
+                document.getElementById(e.srcElement.id).src='./lipic/li'+e.srcElement.id.substring(8,10)+'_1.png';
+				if(preshowingflag){
+					preshowingflag.src='./lipic/li'+preshowingflag.id.substring(8,10)+'.png';
+					}
+				preshowingflag=document.getElementById(e.srcElement.id);
+				
+				
+				//设置热点图片框的大小
+				document.getElementById('i_focus').style.position='absolute';
+				document.getElementById('i_focus').style.top=t / 1024 * ie10bg.offsetHeight + "px";
+                document.getElementById('i_focus').style.left=l / 2048 * ie10bg.offsetWidth + "px";
+				document.getElementById('i_focus').style.width=20 + "px";
+                document.getElementById('i_focus').style.height=20 + "px";
+				var width=0.72*ie10bg.offsetWidth + "px"; 
+				var height=0.68*ie10bg.offsetHeight + "px";
+				document.getElementById('i_focus_piclist').style.width=width;
+                document.getElementById('i_focus_piclist').style.height=height;
+				document.getElementById('i_focus_pic').style.width=width;
+               document.getElementById('i_focus_pic').style.height=height;
+				for(var i =0;i<5;i++){
+				document.getElementById('pic'+i).style.width=width;
+                document.getElementById('pic'+i).style.height=height;
+				document.getElementById('i_focuspic_li'+i).style.width=width;
+                document.getElementById('i_focuspic_li'+i).style.height=height;
+				}
+				
+				
+				
+				
+				/*前一版本：当点击某个国家图片或者年份或者相对应的小灰点时，创建一个红点，用来动画标注该国在地图上的位置
+              //  var redpoint = document.createElement('img');
+              //  redpoint.id = 'panel';
+              //  redpoint.src = './red_point.png';
+             //  redpoint.style.display = '';
+              //  redpoint.style.position = 'absolute';
+             //   redpoint.style.top = t-100+ 'px';
+               // redpoint.style.left = l-100+'px';
+               // redpoint.style.height = '200px';
+               // redpoint.style.width = '200px';
+               // document.body.appendChild(redpoint);
+
+
+				//前一版本：2002年韩日世界杯，有两个地点，因此再创建一个redpoint
+              //  if (l == 1656) { 
+         //           var redpoint2 = document.createElement('img');
+          //          redpoint2.id = 'panel2';
+        //            redpoint2.src = './red_point.png';
+            //        redpoint2.style.display = '';
+              //      redpoint2.style.position = 'absolute';
+              //      redpoint2.style.top = '313px';
+               //     redpoint2.style.left = '1623px';
+               //     redpoint2.style.height = '200px';
+                //    redpoint2.style.width = '200px';
+               //     document.body.appendChild(redpoint2);
+                //    $("#i_focus").animate({
+                 //       top: 413 / 1024 * ie10bg.offsetHeight + "px",
+                 //       left: 1723 / 2048 * ie10bg.offsetWidth + "px",
+                //        height: "1000px",
+                 //       width: "1250px",
+                  //      opacity: "1"
+                //    },
+               //     1500);
+                }*/
+				
+				  $("#i_focus").animate({
+				   top: t/1024*ie10bg.offsetHeight + "px",//根据浏览器大小的百分比设置位置
+                    left:  l/2048*ie10bg.offsetWidth+ "px",
+                    height: 50 +"px",//热点图片最终大小
+                    width: 50+"px",
+                    opacity: "0.8"//透明度
+                },
+                500);//热点图片从小到大的变换速度
+				
+  				$("#i_focus").animate({
+				   top: t/1024*ie10bg.offsetHeight + "px",//根据浏览器大小的百分比设置位置
+                    left:  l/2048*ie10bg.offsetWidth+ "px",
+                    height: 20 +"px",//热点图片最终大小
+                    width: 20+"px",
+                    opacity: "0.8"//透明度
+                },
+                500);//热点图片从小到大的变换速度
+				
+				$("#i_focus").animate({
+				   top: t/1024*ie10bg.offsetHeight + "px",//根据浏览器大小的百分比设置位置
+                    left:  l/2048*ie10bg.offsetWidth+ "px",
+                    height: 50 +"px",//热点图片最终大小
+                    width: 50+"px",
+                    opacity: "0.8"//透明度
+                },
+                500);//热点图片从小到大的变换速度
+				
+				$("#i_focus").animate({
+				   top: t/1024*ie10bg.offsetHeight + "px",//根据浏览器大小的百分比设置位置
+                    left:  l/2048*ie10bg.offsetWidth+ "px",
+                    height: 20 +"px",//热点图片最终大小
+                    width: 20+"px",
+                    opacity: "0.8"//透明度
+                },
+                500);//热点图片从小到大的变换速度
+				
+				
+				
+				//根据点击不同图片引发的onclick2监听将传进来相对应的t和l两个参数，表示小圆点最终应该在的位置，根据这两个参数设置热点图片出现的位置：
+                $("#i_focus").animate({
+				   top: 0.25*ie10bg.offsetHeight + "px",//根据浏览器大小的百分比设置位置
+                    left:  0.1*ie10bg.offsetWidth+ "px",
+                    height: 0.7*ie10bg.offsetHeight +"px",//热点图片最终大小
+                    width: 0.8*ie10bg.offsetWidth+"px",
+                    opacity: "0.8"//透明度
+                },
+                1500);//热点图片从小到大的变换速度
+
+
+				//读出在html代码中写的热点图片ip，方便将来根据不同年份设置不同热点图片
+                var hotpic = document.getElementById('i_focus');
+                hotpic.style.display = '';
+
+                var pic0 = document.getElementById('pic0');
+                var pic1 = document.getElementById('pic1');
+                var pic2 = document.getElementById('pic2');
+                var pic3 = document.getElementById('pic3');
+                var pic4 = document.getElementById('pic4');
+
+                var text0 = document.getElementById('text0');
+                var text1 = document.getElementById('text1');
+                var text2 = document.getElementById('text2');
+                var text3 = document.getElementById('text3');
+                var text4 = document.getElementById('text4');
+
+                var p0 = document.getElementById('spic0');
+                var p1 = document.getElementById('spic1');
+                var p2 = document.getElementById('spic2');
+                var p3 = document.getElementById('spic3');
+                var p4 = document.getElementById('spic4');
+
+                var li0 = document.getElementById('li0');
+                var li1 = document.getElementById('li1');
+                var li2 = document.getElementById('li2');
+                var li3 = document.getElementById('li3');
+                var li4 = document.getElementById('li4');
+
+
+				/*前 一版本：设置热点图片幻灯片的位置，当小圆点在左半屏时，热点图片将出现在右半边，当小圆点在右半屏时则相反
+                if (parseInt(l) > 1024) {
+                    hotpic.style.position = 'absolute';
+                    hotpic.style.top = 100 + 'px';
+                    hotpic.style.left = 200 + 'px';
+                } else {
+                    hotpic.style.position = 'absolute';
+                    hotpic.style.top = 100 + 'px';
+                    hotpic.style.left = ie10bg.offsetWidth - 900 + 'px';
+                }*/
+			
+			
+			
+			
+			//以下为更换热点图片幻灯效果的图片和文字内容方式，已经给出2010年南非世界杯范例，只要将其他数据模仿2010年添加到各个if语句中即可
+			
+				//1930年   乌拉圭   世界杯
+                if (e.srcElement.id.substring(8, 10) == '00') {}
+				//1934年   意大利  世界杯
+				 else if (e.srcElement.id.substring(8, 10) == '02') {} 
+				//1938年   法国 
+				 else if (e.srcElement.id.substring(8, 10) == '03') {} 
+				//1950年  巴西 
+				 else if (e.srcElement.id.substring(8, 10) == '04') {} 
+				//1954年   瑞士 
+				 else if (e.srcElement.id.substring(8, 10) == '05') {}
+				//1958年   瑞典  
+				 else if (e.srcElement.id.substring(8, 10) == '06') {} 
+				//1962年   智利 
+				 else if (e.srcElement.id.substring(8, 10) == '07') {} 
+				//1966年   英国 
+				 else if (e.srcElement.id.substring(8, 10) == '08') {} 
+				//1970年   墨西哥 
+				 else if (e.srcElement.id.substring(8, 10) == '09') {} 
+				//1974年   德国 
+				 else if (e.srcElement.id.substring(8, 10) == '10') {} 
+				//1978年   阿根廷 
+				 else if (e.srcElement.id.substring(8, 10) == '11') {} 
+				//1982年   西班牙 
+				 else if (e.srcElement.id.substring(8, 10) == '12') {} 
+				//1986年   墨西哥 
+				 else if (e.srcElement.id.substring(8, 10) == '13') {} 
+				//1990年   意大利 
+				 else if (e.srcElement.id.substring(8, 10) == '14') {} 
+				//1994年   美国 
+				 else if (e.srcElement.id.substring(8, 10) == '15') {} 
+				//1998年   法国 
+				 else if (e.srcElement.id.substring(8, 10) == '16') {} 
+				//2002年   韩国日本 
+				 else if (e.srcElement.id.substring(8, 10) == '17') {} 
+				//2006年   德国 
+				 else if (e.srcElement.id.substring(8, 10) == '18') { //2010年南非世界杯
+                    //closebutton.onclick=clickclose(this);
+                    pic0.src = './2010hotpic/2/pic1.jpg';//大图
+                    p0.src = './2010hotpic/2/pic1.jpg';//小图
+                    text0.innerHTML = '<a href="http://zqb.cyol.com/content/2010-07/13/content_3321746.htm"><b><u>一次技术对功利的绝杀</u></b></a></br><a href="http://zqb.cyol.com/content/2010-06/23/content_3289941.htm"><b><u>《古典也流行》</u></b></a></br><a href="http://zqb.cyol.com/content/2010-07/09/content_3316586.htm"><b><u>外媒盛赞西班牙踢出漂亮足球</u></b></a></br>';
+                    //	li0.innerHTML='西班牙首夺世界杯冠军';
+                    pic1.src = './2010hotpic/2/pic1.jpg';
+                    p1.src = './2010hotpic/2/pic1.jpg';
+                    text1.innerHTML = '<a href="http://zqb.cyol.com/content/2010-07/13/content_3321746.htm"><b><u>一次技术对功利的绝杀</u></b></a></br><a href="http://zqb.cyol.com/content/2010-06/23/content_3289941.htm"><b><u>《古典也流行》</u></b></a></br><a href="http://zqb.cyol.com/content/2010-07/09/content_3316586.htm"><b><u>外媒盛赞西班牙踢出漂亮足球</u></b></a></br>';
+                    //	li1.innerHTML='西班牙首夺世界杯冠军';
+                    pic2.src = './2010hotpic/3/pic4.jpg';
+                    p2.src = './2010hotpic/3/pic4.jpg';
+                    text2.innerHTML = '<a href="http://zqb.cyol.com/content/2010-06/12/content_3276546.htm"><b><u>世界杯的光辉岁月</u></b></a></br><a href="http://zqb.cyol.com/content/2010-06/17/content_3281441.htm"><b><u>世界杯成南非实现大国梦的跳板</u></b></a></br><a href="http://zqb.cyol.com/content/2010-07/04/content_3307741.htm"><b><u>南非总统力挺申奥</u></b></a></br>';
+                    //	li2.innerHTML='世界杯第一次走进非洲';
+
+                    pic3.src = './2010hotpic/4/pic6.jpg';
+                    p3.src = './2010hotpic/4/pic6.jpg';
+                    text3.innerHTML = '<a href="http://focus.news.163.com/10/0715/10/6BKJ77ID00011SM9_2.html"><b><u>章鱼帝传奇</u></b></a></br><a href="http://worldcup.qq.com/a/20100703/004583.htm"><b><u>“世界上系围巾最好看的男人”勒夫</u></b></a></br><a href="http://zqb.cyol.com/content/2010-06/14/content_3279316.htm"><b><u>南非赛场最强音源于中国制造</u></b></a></br>';
+                    //li3.innerHTML='南非世界杯的身份标签：呜呜祖拉、章鱼帝、勒夫的围巾';
+                    pic4.src = './2010hotpic/5/pic7.jpg';
+                    p4.src = './2010hotpic/5/pic7.jpg';
+                    text4.innerHTML = '<a href="http://zqb.cyol.com/content/2010-06/15/content_3279891.htm"><b><u>神秘朝鲜队高调迎战五星巴西</u></b></a></br><a href="http://zqb.cyol.com/content/2010-06/17/content_3281431.htm"><b><u>现在我是朝鲜队球迷了</u></b></a></br><a href="http://zqb.cyol.com/content/2010-06/22/content_3287716.htm"><b><u>郑大世不是犀利哥</u></b></a></br>';
+                    //	li4.innerHTML='神秘朝鲜备受关注，郑大世一哭成名';
+                } 
+				
+				//2014年   巴西 
+				else if (e.srcElement.id.substring(8, 10) == '19') {
+				} 
+				//2018年   俄罗斯 
+				else if (e.srcElement.id.substring(8, 10) == '20') {}
+				//2022年   卡塔尔 
+				 else if (e.srcElement.id.substring(8, 10) == '21') {} 
+            }
+
+          
+            
+        </script>
+        <script src="jquery.min.js" type="text/javascript">
+        </script>
+        <script language="javascript">
+            $(document).ready(function() {
+                var i_curIndex = 0;
+                var beauBeauSlide; //函数对象
+                var i_curID = 0; //取得鼠标下方的对象ID
+                var pictureID = 0; //索引ID
+                $("#i_focus_piclist li").eq(0).show(); //默认
+                autoScroll();
+                $("#i_focus_btn li").hover(function() {
+                    StopScrolll();
+                    $("#i_focus_btn li").removeClass("i_cur") //所有的li去掉当前的样式加上正常的样式
+                    $(this).addClass("i_cur"); //而本身则加上当前的样式去掉正常的样式
+                    i_curID = $(this).attr("id"); //取当前元素的ID
+                    pictureID = i_curID.substring(i_curID.length - 1); //取最后一个字符
+                    $("#i_focus_piclist li").eq(pictureID).fadeIn("slow"); //本身显示
+                    $("#i_focus_piclist li").not($("#i_focus_piclist li")[pictureID]).hide(); //除了自身别的全部隐藏
+                    $("#i_focus_tx li").hide();
+                    $("#i_focus_tx li").eq(pictureID).show();
+
+                },
+                function() {
+                    //当鼠标离开对象的时候获得当前的对象的ID以便能在启动自动时与其同步
+                    i_curID = $(this).attr("id"); //取当前元素的ID
+                    pictureID = i_curID.substring(i_curID.length - 1); //取最后一个字符
+                    i_curIndex = pictureID;
+                    autoScroll();
+                });
+                //自动滚动
+                function autoScroll() {
+                    $("#i_focus_btn li:last").removeClass("i_cur");
+                    $("#i_focus_tx li:last").hide();
+                    $("#i_focus_btn li").eq(i_curIndex).addClass("i_cur");
+                    $("#i_focus_btn li").eq(i_curIndex - 1).removeClass("i_cur");
+                    $("#i_focus_tx li").eq(i_curIndex).show();
+                    $("#i_focus_tx li").eq(i_curIndex - 1).hide();
+                    $("#i_focus_piclist li").eq(i_curIndex).fadeIn("slow");
+                    $("#i_focus_piclist li").eq(i_curIndex - 1).hide();
+                    i_curIndex++;
+                    i_curIndex = i_curIndex >= 5 ? 0 : i_curIndex;
+                    beauBeauSlide = setTimeout(autoScroll, 2000);
+                }
+                function StopScrolll() //当鼠标移动到对象上面的时候停止自动滚动
+                {
+                    clearTimeout(beauBeauSlide);
+                }
+            });
+        </script>
+        <script type="text/javascript" src="./ThreeWebGL.js">
+        </script>
+        <script type="text/javascript" src="./ThreeExtras.js">
+        </script>
+        <script type="text/javascript" src="./RequestAnimationFrame.js">
+        </script>
+        <script type="text/javascript" src="./Detector.js">
+        </script>
+        <script type="text/javascript" src="./globe.js" charset="utf-8">
+        </script>
+        <script type="text/javascript">
+            var globe = DAT.Globe(document.getElementById('container'),
+            function(label) {
+                return new THREE.Color([0xd9d9d9, 0xb6b4b5, 0x9966cc, 0x15adff, 0x3e66a3, 0x216288, 0xff7e7e, 0xff1f13, 0xc0120b, 0x5a1301, 0xffcc02, 0xedb113, 0x9fce66, 0x0c9a39, 0xfe9872, 0x7f3f98, 0xf26522, 0x2bb673, 0xd7df23, 0xe6b23a, 0x7ed3f7][label]);
+            });
+
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', './search.json', true);
+            xhr.onreadystatechange = function(e) {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        window.data = data;
+                        globe.addData(data, {
+                            format: 'legend'
+                        });
+                        globe.createPoints();
+                        globe.animate();
+                    }
+                }
+            };
+            xhr.send(null);
+        </script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-23152241-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl': 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+
+</html>
